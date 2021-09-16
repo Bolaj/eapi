@@ -2,10 +2,16 @@
 
 namespace App\Models\Model;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Model\Product;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Review extends Model
 {
     use HasFactory;
+
+    public function Product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
